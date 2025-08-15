@@ -108,7 +108,7 @@ export default function AboutPage() {
               <div className="bg-white rounded-2xl p-8 shadow-lg">
                 <h3 className="text-2xl font-bold text-gray-800 mb-4">2. AI Enhancement</h3>
                 <p className="text-gray-600">
-                  Using Google's Gemini AI, we enhance your prompt by adding context, specificity, examples, and clearer instructions.
+                  Using Google&apos;s Gemini AI, we enhance your prompt by adding context, specificity, examples, and clearer instructions.
                 </p>
               </div>
               <div className="bg-white rounded-2xl p-8 shadow-lg">

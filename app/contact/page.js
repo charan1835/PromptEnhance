@@ -95,7 +95,7 @@ export default function ContactPage() {
               Get in Touch
             </h1>
             <p className="text-xl text-gray-600 mb-8">
-              Have questions, feedback, or need support? We're here to help you get the most out of our AI Prompt Enhancer.
+              Have questions, feedback, or need support? We&apos;re here to help you get the most out of our AI Prompt Enhancer.
             </p>
           </div>
         </div>

@@ -147,7 +147,7 @@ export default function FeaturesPage() {
                 <div className="space-y-2">
                   {useCase.examples.map((example, idx) => (
                     <div key={idx} className="bg-gray-50 p-3 rounded-lg text-sm text-gray-700">
-                      "{example}"
+                      &quot;{example}&quot;
                     </div>
                   ))}
                 </div>

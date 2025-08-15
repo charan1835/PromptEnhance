@@ -158,10 +158,7 @@ export default function EnhancePage() {
     setShowSuccess(false);
   };
 
-  const useExample = (example) => {
-    setOriginalPrompt(example);
-    setError('');
-  };
+
 
   return (
     <>
@@ -263,10 +260,13 @@ export default function EnhancePage() {
                           {category.examples.map((example, exampleIndex) => (
                             <button
                               key={exampleIndex}
-                              onClick={() => useExample(example)}
+                              onClick={() => {
+                                setOriginalPrompt(example);
+                                setError('');
+                              }}
                               className="w-full text-left p-3 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-200 border border-transparent hover:border-blue-200"
                             >
-                              "{example}"
+                              &quot;{example}&quot;
                             </button>
                           ))}
                         </div>
