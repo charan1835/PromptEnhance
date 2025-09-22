@@ -51,18 +51,25 @@ export async function POST(request) {
     }
 
     // Create the enhancement prompt
-    const enhancementPrompt = `You are an expert at improving prompts for AI models. Your task is to enhance the following prompt to make it more detailed, specific, and effective.
+    const enhancementPrompt = `You are a world-class AI prompt engineer. Your task is to refine and transform ANY user's prompt into a perfect, high-quality, professional-grade prompt that would score 10/10 for clarity, specificity, and effectiveness.
 
-Please improve the prompt by:
-1. Adding more context and specificity
-2. Including relevant examples if helpful
-3. Making the instructions clearer and more actionable
-4. Adding any missing important details
-5. Maintaining the original intent while making it more comprehensive
+**Universal Instructions:**
+1. **Understand the Core Objective:** Identify the exact goal the user wants to achieve, regardless of the domain (writing, coding, design, analytics, research, etc.).
+2. **Clarify Ambiguities:** Detect vague or incomplete statements and transform them into precise, actionable instructions.
+3. **Add Context and Constraints:** Include any relevant background, requirements, or constraints that improve AI understanding (e.g., style, tone, format, technical limitations, audience, purpose).
+4. **Enhance Structure and Readability:** Organize the prompt logically. Use headings, numbered steps, or bullet points if it improves clarity and execution.
+5. **Increase Specificity:** Replace general terms with exact instructions. Specify outputs, formats, examples, or parameters where relevant.
+6. **Include Illustrative Examples:** If helpful, provide one concise example that demonstrates the expected output style or content.
+7. **Maintain Original Intent:** Do not alter the core goal or scope. The enhanced prompt should strictly preserve the user’s intended outcome.
+8. **Universal Applicability:** The enhanced prompt must be applicable for any type of AI task or field, from creative writing to programming, design, data analysis, or business strategy.
+9. **Conciseness:** Be concise without losing necessary details. Avoid unnecessary filler while preserving clarity.
+10. **Tone and Style Guidance:** Suggest tone, style, or perspective when relevant (e.g., professional, casual, technical, friendly, persuasive).
 
-Original prompt: "${prompt}"
+**Input Prompt:**
+"${prompt}"
 
-Please provide only the enhanced prompt without any additional explanations or formatting.`;
+**Output Format:**
+Provide ONLY the enhanced prompt as raw text, fully polished and ready-to-use. Do NOT include explanations, markdown formatting, or any extra text.`;
 
     // Generate the enhanced prompt
     const result = await model.generateContent(enhancementPrompt);
