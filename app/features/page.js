@@ -67,24 +67,29 @@ export default function FeaturesPage() {
 
   const useCases = [
     {
-      title: "Content Creation",
-      description: "Enhance prompts for blog posts, articles, social media content, and creative writing.",
-      examples: ["Write a blog post about...", "Create social media content for...", "Generate a story about..."]
+      title: "Creative & Content Generation",
+      description: "Unleash your creativity. Generate compelling blog posts, viral social media content, captivating stories, and scripts.",
+      examples: ["Generate a plot for a sci-fi short story", "Write a witty Twitter thread about AI", "Create a dialogue for a podcast episode"]
     },
     {
-      title: "Business & Marketing",
-      description: "Improve prompts for marketing copy, product descriptions, and business communications.",
-      examples: ["Write a product description for...", "Create marketing copy for...", "Draft an email about..."]
+      title: "Code & Technical Solutions",
+      description: "Accelerate your development workflow. Generate code snippets, debug complex problems, and get clear technical explanations.",
+      examples: ["Write a Python script to scrape a website", "Explain this React component in simple terms", "Generate a SQL query to find active users"]
     },
     {
-      title: "Academic & Research",
-      description: "Enhance prompts for research papers, academic writing, and educational content.",
-      examples: ["Explain the concept of...", "Write a research summary on...", "Create a lesson plan for..."]
+      title: "Business & Strategy",
+      description: "Craft winning strategies. Improve marketing copy, draft professional emails, and brainstorm innovative business ideas.",
+      examples: ["Draft a persuasive sales email to a new lead", "Analyze the SWOT for a new product idea", "Create a marketing slogan for a coffee brand"]
     },
     {
-      title: "Technical Writing",
-      description: "Improve prompts for documentation, tutorials, and technical explanations.",
-      examples: ["Write documentation for...", "Create a tutorial on...", "Explain how to..."]
+      title: "Learning & Exploration",
+      description: "Master new topics faster. Get complex concepts explained simply, summarize research papers, and create custom learning plans.",
+      examples: ["Explain Quantum Computing like I'm 15", "Summarize the key findings of this research paper...", "Create a 7-day study plan for learning JavaScript"]
+    },
+    {
+      title: "Fun & Games",
+      description: "Spark some fun. Create text-based adventure games, generate quiz questions, or get ideas for your next D&D campaign.",
+      examples: ["Create a text-based adventure game in a haunted house", "Generate 5 trivia questions about 90s movies", "Design a D&D character backstory"]
     }
   ];
 
@@ -139,7 +144,7 @@ export default function FeaturesPage() {
           <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">
             Use Cases
           </h2>
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {useCases.map((useCase, index) => (
               <div key={index} className="bg-white rounded-2xl p-8 shadow-lg">
                 <h3 className="text-2xl font-bold text-gray-800 mb-4">{useCase.title}</h3>

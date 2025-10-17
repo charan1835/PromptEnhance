@@ -123,13 +123,19 @@ export default function EnhancePage() {
       });
 
       if (!response.ok) {
-        throw new Error('Failed to enhance prompt');
+        // Try to get more specific error info from the response body
+        const errorData = await response.json().catch(() => null);
+        throw new Error(errorData?.error || 'Failed to enhance prompt');
       }
 
       const data = await response.json();
       setEnhancedPrompt(data.enhancedPrompt);
     } catch (err) {
-      setError('Error enhancing prompt. Please try again.');
+      // Display the specific error message from the API if available
+      const errorMessage = err.message.startsWith('Failed to enhance prompt')
+        ? 'Error enhancing prompt. Please try again.'
+        : err.message;
+      setError(errorMessage);
       console.error('Error:', err);
     } finally {
       setIsLoading(false);

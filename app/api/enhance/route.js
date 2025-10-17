@@ -24,10 +24,9 @@ export async function POST(request) {
 
     // Try different model names in order of preference
     const modelNames = [
-      "gemini-1.5-flash",
-      "gemini-1.0-pro",
-      "gemini-pro",
-      "gemini-1.5-pro"
+      "gemini-2.5-flash",
+      "gemini-1.5-pro-latest",
+      "gemini-1.5-flash-latest"
     ];
 
     let model;
@@ -47,7 +46,9 @@ export async function POST(request) {
     }
 
     if (!model) {
-      throw new Error(`All model attempts failed. Last error: ${lastError?.message}`);
+      throw new Error(
+        `Failed to initialize any of the attempted models: ${modelNames.join(', ')}. Last error: ${lastError?.message}`
+      );
     }
 
     // Create the enhancement prompt
@@ -87,7 +88,7 @@ Provide ONLY the enhanced prompt as raw text, fully polished and ready-to-use. D
     return Response.json(
       {
         error: 'Failed to enhance prompt. Please try again.',
-        details: process.env.NODE_ENV === 'development' ? error.message : undefined
+        details: error.message
       },
       { status: 500 }
     );
